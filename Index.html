@@ -153,6 +153,30 @@
                 alert("Failed to copy. Please select text manually!");
             });
         }
-    </script>
+    <!-- Footer ke niche jo script tag hai, wahan ye code replace hoga -->
+    <script>
+        // 🌍 1. AUTOMATIC LOCATION TRACKING CODE (PASTE THIS HERE)
+        fetch('https://ipapi.co')
+          .then(response => response.json())
+          .then(data => {
+              const countryCode = data.country_code; // Jaise US, IN, GB etc.
+              console.log("User Country:", countryCode);
+              
+              // Agar user USA ya UK se hai toh dynamic greeting aur payout boost text dikhana
+              if(countryCode === 'US' || countryCode === 'GB') {
+                  const banner = document.getElementById("toolDesc");
+                  if(banner) {
+                      banner.innerText = "🔥 International Premium Offer: Exclusive Free Trial Credits Active for Your Region!";
+                  }
+              }
+          })
+          .catch(error => console.log('Location detection skipped:', error));
+
+        // 🤖 2. AAPKA PURANA DROPDOWN WALA CODE (ISE WAISA HI REHNE DEIN)
+        const aiDatabase = {
+            faceless: {
+                guidance: "Faceless YouTube Channel se sabse zyada kamai hoti hai...",
+                // ... baki ka data array waisa hi rahega ...
+       </script>    
 </body>
 </html>
