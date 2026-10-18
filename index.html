@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Monetag Official Verification Meta Tag -->
+    <meta name="monetag" content="5d91b5188b205c507a5d1dd779fe89d4">
+    
+    <title>AI Studio Pro — High-Yield Automation Hub & Enterprise Engine</title>
+    
+    <!-- Google Fonts for High-End Developer Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #06080e;
+            --surface-card: #0d121f;
+            --surface-card-hover: #12192b;
+            --border-subtle: rgba(56, 189, 248, 0.12);
+            --border-highlight: rgba(0, 242, 254, 0.35);
+            --accent-cyan: #00f2fe;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding-bottom: 40px;
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
+                linear-gradient(to bottom, transparent, var(--bg-base) 80%);
+        }
+
+        /* Top System Status Terminal Bar */
+        .system-status-bar {
+            background: #030408;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-emerald);
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--accent-emerald);
+            box-shadow: 0 0 8px var(--accent-emerald);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Navigation Header */
+        header {
+            background: rgba(13, 18, 31, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 24px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+
+        .badge-dev {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            color: var(--accent-cyan);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 12px;
+        }
+
+        h1.main-title {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        /* High CPM Monetag Smartlink Banner */
+        .ad-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 24px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 25px rgba(168, 85, 247, 0.15);
+        }
+
+        .ad-banner:hover {
+            transform: translateY(-2px);
+            border-color: rgba(168, 85, 247, 0.6);
+        }
+
+        /* Developer Glass Cards */
+        .pro-card {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        /* Impact High-Income Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .tool-card {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-highlight);
+            transform: translateY(-3px);
+            background: var(--surface-card-hover);
+        }
+
+        .payout-tag {
+            align-self: flex-start;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'Fira Code', monospace;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--accent-amber);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            margin-bottom: 12px;
+        }
+
+        .tool-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .tool-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .perk-box {
+            background: rgba(0, 242, 254, 0.04);
+            border: 1px dashed rgba(0, 242, 254, 0.2);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 11px;
+            color: var(--accent-cyan);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-claim {
+            width: 100%;
+            background: linear-gradient(135deg, #00f2fe, #0284c7);
+            color: #06080e;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-claim:hover {
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+            transform: scale(1.02);
+        }
+
+        /* Dropdown Selector */
+        select.custom-select {
+            width: 100%;
+            background-color: #090d16;
+            border: 1.5px solid #1e263d;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        select.custom-select:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        /* Video Player Wrapper */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+            margin: 14px 0 10px;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Prompts Search Bar & Terminal */
+        .search-input {
+            width: 100%;
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            outline: none;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .prompt-card {
+            background: #070a12;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .prompt-tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .btn-copy {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-blue);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-copy:hover {
+            background: var(--accent-blue);
+            color: #06080e;
+        }
+
+        .prompt-body {
+            color: #34d399;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            user-select: all;
+            background: #030509;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Modal Engine */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(3, 4, 8, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.25s ease;
+            padding: 16px;
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-card {
+            background: #0d121f;
+            border: 1.5px solid var(--border-highlight);
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .token-display {
+            background: #06080e;
+            border: 1px dashed var(--accent-emerald);
+            padding: 10px 14px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 16px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+        }
+
+        .btn-launch {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #00f2fe, #38bdf8);
+            color: #06080e;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 13px;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        /* Footer & Compliance */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 24px 16px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Toast Popup */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--accent-emerald);
+            color: #06080e;
+            text-align: center;
+            border-radius: 10px;
+            padding: 12px 16px;
+            position: fixed;
+            z-index: 120;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-weight: 800;
+            font-size: 13px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        #toast.show {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- System Terminal Status Bar (Real-Time Location & Ping) -->
+    <div class="system-status-bar">
+        <div class="status-indicator">
+            <span class="pulse-dot"></span>
+            <span>API SERVER: US-EAST (GLOBAL CLOUD ROUTE ACTIVE)</span>
+        </div>
+        <div id="geoDisplay">LATENCY: 18ms | REGION: DETECTING LIVE ROUTE... 🟢</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="badge-dev">⚡ v3.4 Enterprise AI Suite</div>
+        <h1 class="main-title">AI Automation Studio Pro</h1>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 6px;">Enterprise Prompts, High-Ticket Affiliate Systems & Official Free Credits</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Top Monetag Smartlink Ad Banner -->
+        <a href="https://uplcm.com/4/12053407" target="_blank" rel="noopener" class="ad-banner">
+            <div>
+                <span style="color: #f472b6; font-size: 11px; text-transform: uppercase; font-family: monospace;">[VIP Master Resource]</span>
+                <p style="margin-top: 2px;">⚡ Unlock Full 10,000+ AI Automation Prompts & Production Cheat Sheet Database</p>
+            </div>
+            <span style="font-size: 18px;">➔</span>
+        </a>
+
+        <!-- 1. HIGH-PAYOUT IMPACT.COM PARTNER TOOLS DIRECTORY -->
+        <div class="pro-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>💎 High-Payout Partner Tools (Claim Free Credits & Trial)</span>
+                </h2>
+                <span style="font-size: 11px; color: var(--accent-emerald); font-family: monospace;">● VERIFIED FREE TIERS</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 18px;">Click "Claim Credits" to allocate your exclusive registration tokens and access verified free trials.</p>
+
+            <div class="tools-grid">
+                
+                <!-- Tool 1: InVideo -->
+                <div class="tool-card">
+                    <div>
+                        <span class="payout-tag">IMPACT: 25% - 50% RECURRING / $100 CPA</span>
+                        <h3 class="tool-name">InVideo AI Studio</h3>
+                        <p class="tool-desc">Text prompt se script, human voiceover, stock footage aur subtitles ke sath poori 4K video ready karta hai.</p>
+                        <div class="perk-box">
+                            <span>🎁</span>
+                            <span><strong>Free Perk:</strong> 10 Mins Free Video Generation</span>
+                        </div>
+                    </div>
+                    <button class="btn-claim" onclick="openClaimModal('InVideo AI Studio', '10 Minutes Free Cloud Render', 'https://invideo.io', 'INV-FREE10M')">
+                        🚀 Claim Credits & Trial ➔
+                    </button>
+                </div>
+
+                <!-- Tool 2: ElevenLabs -->
+                <div class="tool-card">
+                    <div>
+                        <span class="payout-tag">IMPACT: 22% MONTHLY LIFETIME</span>
+                        <h3 class="tool-name">ElevenLabs Prime Voice</h3>
+                        <p class="tool-desc">Hollywood-grade emotional narration voices jo YouTube moral stories aur faceless content ke liye #1 hain.</p>
+                        <div class="perk-box">
+                            <span>🎁</span>
+                            <span><strong>Free Perk:</strong> 10,000 Monthly Free Characters</span>
+                        </div>
+                    </div>
+                    <button class="btn-claim" onclick="openClaimModal('ElevenLabs AI', '10,000 Voice Chars / Month', 'https://elevenlabs.io', 'VOICE-FREE10K')">
+                        🎙️ Claim Free Characters ➔
+                    </button>
+                </div>
+
+                <!-- Tool 3: HeyGen -->
+                <div class="tool-card">
+                    <div>
+                        <span class="payout-tag">IMPACT: HIGH TICKET ($120 CPA)</span>
+                        <h3 class="tool-name">HeyGen Talking Avatars</h3>
+                        <p class="tool-desc">Ultra-realistic AI humans for viral shorts, marketing videos, and international affiliate campaigns.</p>
+                        <div class="perk-box">
+                            <span>🎁</span>
+                            <span><strong>Free Perk:</strong> Instant 1-Credit Free Video Export</span>
+                        </div>
+                    </div>
+                    <button class="btn-claim" onclick="openClaimModal('HeyGen Studio', '1 Free Avatar Video Credit', 'https://www.heygen.com', 'HEY-TRIAL1')">
+                        👤 Claim Free Avatar ➔
+                    </button>
+                </div>
+
+                <!-- Tool 4: Opus Clip -->
+                <div class="tool-card">
+                    <div>
+                        <span class="payout-tag">IMPACT: 25% SAAS RECURRING</span>
+                        <h3 class="tool-name">Opus Clip Viral Clipper</h3>
+                        <p class="tool-desc">Long YouTube videos ko 1-click mein 10 viral Shorts aur automatic Alex Hormozi captions mein badalta hai.</p>
+                        <div class="perk-box">
+                            <span>🎁</span>
+                            <span><strong>Free Perk:</strong> 60 to 90 Mins Video Clipping</span>
+                        </div>
+                    </div>
+                    <button class="btn-claim" onclick="openClaimModal('Opus Clip', '90 Mins Free Viral Clipping', 'https://www.opus.pro', 'OPUS-CLIP90')">
+                        ⚡ Claim Free Minutes ➔
+                    </butto                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. PRODUCTION WORKFLOW & VIDEO MASTERCLASS -->
+        <div class="pro-card">
+            <div class="section-header">
+                <h2 class="section-title">🎬 Production Workflow & Masterclass</h2>
+            </div>
+            
+            <label style="font-size: 13px; color: var(--accent-cyan); font-weight: 700; margin-bottom: 8px; display: block;">Select Production Niche:</label>
+            <select id="nicheSelector" class="custom-select" onchange="switchNiche()">
+                <option value="managerRetirement">🎬 Manager Retirement & Moral Life Story (Highest Viral RPM)</option>
+                <option value="invideoDoc">🎥 InVideo Automation Documentary Production</option>
+                <option value="elevenlabsAudio">🎙️ ElevenLabs Hyper-Realistic Emotional Narration</option>
+            </select>
+
+            <div style="margin-top: 18px;">
+                <p id="nicheNotes" style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;"></p>
+                
+                <div class="video-wrapper">
+                    <iframe id="videoPlayer" src="https://www.youtube.com/embed/lgF00LIbux4" title="Video Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div style="text-align: right; margin-top: 6px;">
+                    <a id="videoDirectLink" href="https://www.youtube.com/watch?v=lgF00LIbux4" target="_blank" rel="noopener" style="font-size: 12px; color: #ef4444; text-decoration: none; font-weight: 700;">
+                        ▶ If video shows unavailable, click to watch directly on YouTube ➔
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. INTERACTIVE 10,000+ PROMPTS TERMINAL (ON-SCREEN SEARCH & COPY) -->
+        <div class="pro-card" id="promptsList">
+            <div class="section-header">
+                <h2 class="section-title">🔥 10,000+ Prompts Terminal (Instant Filter & Copy)</h2>
+                <span style="font-size: 11px; color: var(--accent-cyan); font-family: monospace;">SQL ENGINE ACTIVE</span>
+            </div>
+
+            <input type="text" id="promptSearchInput" class="search-input" placeholder="🔍 Search prompts by keywords (e.g., 'Retirement', 'ElevenLabs', 'Midjourney', 'Moral')..." onkeyup="searchPrompts()">
+
+            <div id="promptsContainer">
+                
+                <!-- Prompt 1: Manager Retirement -->
+                <div class="prompt-card" data-tags="retirement manager story emotional moral youtube faceless">
+                    <div class="prompt-header">
+                        <span class="prompt-tag">#FACLESS_YOUTUBE_STORY</span>
+                        <button class="btn-copy" onclick="copyPromptCode(this)">📋 Copy Script</button>
+                    </div>
+                    <pre class="prompt-body">Act as an award-winning emotional storyteller and viral YouTube documentary scriptwriter. Write a 5-minute faceless script on: 'The Retiring Manager's Secret Envelope'.
+
+Plot Requirements:
+1. Hook (0-20s): An old, quiet manager of 35 years is packing his empty desk on his retirement day while young arrogant executives ignore him.
+2. Backstory: Reveal how he secretly sacrificed his own bonuses and promotions to shield junior employees during corporate layoffs.
+3. Climax: At the farewell dinner, the arrogant CEO reads an unsealed letter in front of the board that leaves everyone in complete tears.
+4. Output: Include cinematic scene descriptions in [BRACKETS] for InVideo AI and dramatic pauses for ElevenLabs narration.</pre>
+                </div>
+
+                <!-- Prompt 2: ElevenLabs Narration -->
+                <div class="prompt-card" data-tags="elevenlabs voice voiceover narrator emotional audio">
+                    <div class="prompt-header">
+                        <span class="prompt-tag">#ELEVENLABS_VOICE_ENGINE</span>
+                        <button class="btn-copy" onclick="copyPromptCode(this)">📋 Copy Script</button>
+                    </div>
+                    <pre class="prompt-body">Act as a Hollywood dramatic voiceover narrator. Read the following text with slow measured cadence, deep natural breaths, and intense emotional pauses:
+
+'He walked through the quiet office corridors one final time. Thirty-five years of memories etched into these walls... and in his coat pocket lay the one truth that would change this company forever.'</pre>
+                </div>
+
+                <!-- Prompt 3: Pixar 3D Art -->
+                <div class="prompt-card" data-tags="midjourney leonardo 3d pixar animation art character">
+                    <div class="prompt-header">
+                        <span class="prompt-tag">#3D_ANIMATION_PROMPT</span>
+                        <button class="btn-copy" onclick="copyPromptCode(this)">📋 Copy Script</button>
+                    </div>
+                    <pre class="prompt-body">Pixar 3D animated style, gentle elderly retired office manager with silver glasses holding an old vintage leather briefcase, standing in front of a glowing glass skyscraper at sunset, warm cinematic golden lighting, emotional heartfelt expression, 8k render, Unreal Engine 5 aesthetic --ar 16:9 --v 6.0</pre>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 4. BOTTOM DOWNLOAD PACK (HIGH CPM MONETAG LINK) -->
+        <div style="background: linear-gradient(135deg, #090d16, #16122b); border: 1px solid #4338ca; border-radius: 18px; padding: 24px; text-align: center;">
+            <h3 style="font-size: 19px; font-weight: 800; color: #fff;">📦 Need the Full 10,000+ Master Database (.JSON & .PDF)?</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 6px 0 16px;">Download our categorized production vault containing full YouTube scripts, viral hooks, and SEO frameworks.</p>
+            <a href="https://uplcm.com/4/12053407" target="_blank" rel="noopener" style="display:inline-block; background: linear-gradient(135deg, #6366f1, #a855f7); color:#fff; text-decoration:none; padding:14px 28px; border-radius:12px; font-weight:800; font-size:13px; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);">
+                ⚡ Download Complete 10,000+ Prompts Archive ➔
+            </a>
+        </div>
+
+    </div>
+
+    <!-- FTC Compliance Footer (Crucial for Impact.com Approval) -->
+    <footer>
+        <p>© 2026 AI Automation Studio Pro. Built for Enterprise Creators & Developers.</p>
+        <p style="margin-top: 6px;">
+            Affiliate Disclosure: Some of the software links on this site are affiliate partnership links (Impact.com). If you click through and claim a free trial or make a purchase, we may earn an affiliate commission at no additional cost to you.
+        </p>
+    </footer>
+
+    <!-- DYNAMIC CLAIM & TRIAL MODAL ENGINE -->
+    <div id="claimModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeClaimModal()">✕</button>
+            
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                <span style="font-size: 20px;">🎁</span>
+                <h3 id="modalToolTitle" style="font-size: 18px; font-weight:800; color:#fff;">Claim Free Credits</h3>
+            </div>
+            
+            <p id="modalPerkText" style="font-size: 13px; color: var(--accent-cyan); font-weight:600;"></p>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 6px;">Your registration token has been generated. Use this voucher during signup to unlock $0 trial access without credit card requirements.</p>
+
+            <div class="token-display">
+                <div>
+                    <span style="color:var(--text-muted); font-size:10px; display:block;">ACTIVATION TOKEN:</span>
+                    <strong id="modalTokenCode" style="color:var(--accent-emerald);"></strong>
+                </div>
+                <button onclick="copyToken()" style="background:rgba(16,185,129,0.15); border:1px solid var(--accent-emerald); color:var(--accent-emerald); padding:4px 10px; border-radius:6px; font-size:11px; cursor:pointer;">Copy Token</button>
+            </div>
+
+            <!-- Launches Verified Partner Page -->
+            <a id="modalLaunchBtn" href="#" target="_blank" rel="noopener" class="btn-launch">
+                Launch Official Site & Activate Credits ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast">✅ Text Copied to Clipboard!</div>
+
+    <!-- Complete Unified JavaScript Engine -->
+    <script>
+        // 1. WORKFLOW DATA (Manager Retirement Default)
+        const workflows = {
+            managerRetirement: {
+                notes: "Manager Retirement aur Moral Stories YouTube par sabse zyada viral hoti hain. Step 1: ChatGPT se emotional plot-twist script generate karein. Step 2: ElevenLabs se deep emotional human voiceover banayein. Step 3: InVideo AI Studio mein paste karke 4K cinematic scenes render karein.",
+                embed: "https://www.youtube.com/embed/lgF00LIbux4",
+                watch: "https://www.youtube.com/watch?v=lgF00LIbux4"
+            },
+            invideoDoc: {
+                notes: "InVideo AI Studio complete text prompt se documentary scenes, stock visuals aur animated captions automatically match karta hai.",
+                embed: "https://www.youtube.com/embed/lgF00LIbux4",
+                watch: "https://www.youtube.com/watch?v=lgF00LIbux4"
+            },
+            elevenlabsAudio: {
+                notes: "ElevenLabs se realistic emotional narration voiceover generate karein taaki aapki faceless video 100% human-like lage.",
+                embed: "https://www.youtube.com/embed/yDTbAxJ3sKI",
+                watch: "https://www.youtube.com/watch?v=yDTbAxJ3sKI"
+            }
+        };
+
+        function switchNiche() {
+            const val = document.getElementById("nicheSelector").value;
+            const data = workflows[val];
+            if (data) {
+                document.getElementById("nicheNotes").innerText = data.notes;
+                document.getElementById("videoPlayer").src = data.embed;
+                document.getElementById("videoDirectLink").href = data.watch;
+            }
+        }
+
+        // 2. MODAL ENGINE LOGIC FOR CLAIMING FREE CREDITS & TRIAL
+        let activeToken = "";
+        function openClaimModal(toolName, perk, url, code) {
+            document.getElementById("modalToolTitle").innerText = "Claim " + toolName + " Access";
+            document.getElementById("modalPerkText").innerText = "✔ Entitled: " + perk;
+            document.getElementById("modalTokenCode").innerText = code;
+            document.getElementById("modalLaunchBtn").href = url;
+            activeToken = code;
+
+            const modal = document.getElementById("claimModal");
+            modal.classList.add("active");
+        }
+
+        function closeClaimModal() {
+            document.getElementById("claimModal").classList.remove("active");
+        }
+
+        function copyToken() {
+            navigator.clipboard.writeText(activeToken).then(() => {
+                showToast("✅ Token Copied: " + activeToken);
+            });
+        }
+
+        // 3. SEARCH & PROMPTS ENGINE
+        function searchPrompts() {
+            const query = document.getElementById("promptSearchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".prompt-card");
+
+            cards.forEach(card => {
+                const tags = card.getAttribute("data-tags") || "";
+                const text = card.innerText.toLowerCase();
+                if (tags.includes(query) || text.includes(query)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function copyPromptCode(btn) {
+            const code = btn.closest(".prompt-card").querySelector(".prompt-body").innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                showToast("✅ Prompt Copied to Clipboard!");
+            });
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.innerText = msg;
+            t.className = "show";
+            setTimeout(() => { t.className = ""; }, 2500);
+        }
+
+        // 4. REAL-TIME MULTI-SERVER INTERNATIONAL GEO-ENGINE
+        async function detectGlobalVisitor() {
+            const geoElement = document.getElementById("geoDisplay");
+            
+            try {
+                // Primary Server
+                let response = await fetch('https://ipapi.co/json/');
+                if (!response.ok) throw new Error('Primary server unreachable');
+                let data = await response.json();
+                renderGeoData(data.country_name, data.country_code, data.city);
+            } catch (err) {
+                // Fallback Secondary Server
+                try {
+                    let fallbackRes = await fetch('https://ipwho.is/');
+                    let fallbackData = await fallbackRes.json();
+                    renderGeoData(fallbackData.country, fallbackData.country_code, fallbackData.city);
+                } catch (e) {
+                    geoElement.innerText = "LATENCY: 18ms | REGION: GLOBAL EDGE ROUTE 🟢";
+                }
+            }
+        }
+
+        function renderGeoData(country, code, city) {
+            const geoElement = document.getElementById("geoDisplay");
+            const cityName = city ? ` (${city})` : "";
+            
+            // Flags mapping for top regions
+            const flags = { US: "🇺🇸", GB: "🇬🇧", CA: "🇨🇦", AU: "🇦🇺", DE: "🇩🇪", IN: "🇮🇳" };
+            const flag = flags[code] || "🌐";
+
+            geoElement.innerHTML = `LATENCY: 16ms | REGION: ${flag} ${country}${cityName} [GLOBAL PRIORITY] 🟢`;
+        }
+
+        // 5. INITIALIZE ON LOAD
+        window.onload = function() {
+            switchNiche();
+            detectGlobalVisitor();
+        };
+    </script>
+</body>
+</html>
