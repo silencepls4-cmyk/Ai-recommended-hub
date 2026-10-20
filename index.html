@@ -894,11 +894,19 @@ voice_settings = {
             document.getElementById('checkout-modal').classList.add('hidden');
         }
 
-        function triggerPayment() {
+                function triggerPayment() {
             const email = document.getElementById('checkout-email').value;
             if(!email || !email.includes('@')) {
                 alert("Please enter a valid email address to receive your bundle download link.");
                 return;
+            }
+            showToast("Redirecting to secure gateway...");
+            setTimeout(() => {
+                window.open(`https://silencepls4-cmyk.github.io/Ai-recommended-hub/');
+                closeCheckoutModal();
+            }, 800);
+                }
+        
             }
             showToast("Redirecting to secure gateway...");
             setTimeout(() => {
